@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class moviesFragment extends Fragment {
 
-    ArrayList<Movies> movies;
+    ArrayList<ListItem> movies;
     GridLayoutManager layoutManager;
 
     @Override
@@ -39,11 +39,14 @@ public class moviesFragment extends Fragment {
         movies.add(new Movies("Captain America: The First Avenger","2002","8.3",R.drawable.c1));
         movies.add(new Movies("Iron Man","2002","8.4",R.drawable.i1));
 
-        RecyclerView newrv = (RecyclerView) rootView.findViewById(R.id.recycler_view_movies);
 
-        RecycleViewAdapterM adapter = new RecycleViewAdapterM(getContext(),movies);
+        RecycleViewAdapter adapter = new RecycleViewAdapter(getContext(),movies);
 
-        layoutManager = new GridLayoutManager(getContext(),1);
+        RecyclerView newrv = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+        Log.d("CHARACTER FRAGMENT", "onCreateView: ");
+        //RecycleViewAdapter adapter = new RecycleViewAdapter(getContext(),characters);
+
+        layoutManager = new GridLayoutManager(getContext(),2);
         newrv.setAdapter(adapter);
         newrv.setLayoutManager(layoutManager);
         return rootView;

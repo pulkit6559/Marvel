@@ -1,32 +1,38 @@
+/*package com.example.android.marvelfandom;
+
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android.marvelfandom.R;
 
-public class MultiViewTypeAdapter extends RecyclerView.Adapter {
+import java.util.ArrayList;
 
-    private ArrayList<Model>dataSet;
+public abstract class RecycleViewAdapterM extends RecyclerView.Adapter {
+
+    private ArrayList<Character> character;
+    private ArrayList<Movies> movies;
     Context mContext;
     int total_types;
 
-    public static class TextTypeViewHolder extends RecyclerView.ViewHolder {
+    public static class MovieViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtType;
         CardView cardView;
 
-        public TextTypeViewHolder(View itemView) {
+        public MovieViewHolder(View itemView) {
             super(itemView);
 
-            this.txtType = (TextView) itemView.findViewById(R.id.type);
+            this.txtType = (TextView) itemView.findViewById(R.id.);
             this.cardView = (CardView) itemView.findViewById(R.id.card_view);
         }
     }
 
-    public static class ImageTypeViewHolder extends RecyclerView.ViewHolder {
+    public static class CharacterViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtType;
         ImageView image;
@@ -39,17 +45,8 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter {
         }
     }
 
-    public static class AudioTypeViewHolder extends RecyclerView.ViewHolder {
 
-            public AudioTypeViewHolder(View itemView) {
-            super(itemView);
-
-            this.txtType = (TextView) itemView.findViewById(R.id.type);
-            this.fab = (FloatingActionButton) itemView.findViewById(R.id.fab);
-        }
-    }
-
-    public MultiViewTypeAdapter(ArrayList<Model>data, Context context) {
+    public RecycleViewAdapterM(ArrayList<Model>data, Context context) {
         this.dataSet = data;
         this.mContext = context;
         total_types = dataSet.size();
@@ -66,9 +63,6 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter {
             case Model.IMAGE_TYPE:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.image_type, parent, false);
                 return new ImageTypeViewHolder(view);
-            case Model.AUDIO_TYPE:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.audio_type, parent, false);
-                return new AudioTypeViewHolder(view);
         }
         return null;
     }
@@ -137,4 +131,4 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return dataSet.size();
     }
-}
+}*/

@@ -16,7 +16,7 @@ import java.util.List;
 
 public class characterFragment extends Fragment {
 
-    ArrayList<Character> characters;
+    ArrayList<ListItem> characters;
     GridLayoutManager layoutManager;
 
     @Override
@@ -38,11 +38,20 @@ public class characterFragment extends Fragment {
 
         RecyclerView newrv = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         Log.d("CHARACTER FRAGMENT", "onCreateView: ");
-        RecycleViewAdapter adapter = new RecycleViewAdapter(getContext(),characters);
+        //RecycleViewAdapter adapter = new RecycleViewAdapter(getContext(),characters);
 
+        RecycleViewAdapter adapter = new RecycleViewAdapter(getContext(),characters);
         layoutManager = new GridLayoutManager(getContext(),2);
         newrv.setAdapter(adapter);
         newrv.setLayoutManager(layoutManager);
+
+
+
+
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //recyclerView.setAdapter(exampleAdapter);
+
+
         return rootView;
     }
 }

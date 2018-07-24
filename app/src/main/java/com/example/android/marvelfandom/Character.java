@@ -1,10 +1,16 @@
 package com.example.android.marvelfandom;
 
-public class Character {
+public class Character implements ListItem {
     int id;
     String name;
     String summary;
     int image_id;
+
+
+    @Override
+    public int getListItemType() {
+        return ListItem.CHARACTER;
+    }
 
     public Character() {
     }

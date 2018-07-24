@@ -1,6 +1,6 @@
 package com.example.android.marvelfandom;
 
-public class Movies {
+public class Movies implements ListItem{
     private String name;
     private String date;
     private String rating;
@@ -11,6 +11,11 @@ public class Movies {
     private String producer;
 
     public Movies() {
+    }
+
+    @Override
+    public int getListItemType() {
+        return ListItem.MOVIE;
     }
 
     public Movies(String name, String date, String rating, int image_id) {
